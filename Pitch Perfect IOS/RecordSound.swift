@@ -5,14 +5,12 @@
 //  Created by Sahib on 07/02/18.
 //  Copyright © 2018 RTS Production. All rights reserved.
 //
-
 import UIKit
 import AVFoundation
 
-class RecordSoundViewController: UIViewController ,AVAudioRecorderDelegate{
+class RecordSoundViewController: UIViewController{
     
     var audioRecorder : AVAudioRecorder!
-    
     //MARK: OUTLETS
     @IBOutlet weak var recordLabel: UILabel!
     @IBOutlet weak var recordB_Outlet: UIButton!
@@ -50,14 +48,15 @@ class RecordSoundViewController: UIViewController ,AVAudioRecorderDelegate{
         try! audioSession.setActive(false)
     }
     
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if flag{
-        performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
-        }
-        else{
-            print("Recording was Not Successful")
-        }
+    //MARK: Setting The Layout
+    func buttonActivity(checkActivity : Bool){
+        recordB_Outlet.isEnabled = !checkActivity
+        stopB_Outlet.isEnabled = checkActivity
+        recordLabel.text = checkActivity ? "Recording in Progress" : "Tap To Record"
     }
+}
+
+extension RecordSoundViewController : AVAudioRecorderDelegate{
     
     //MARK: Setting ViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,19 +67,13 @@ class RecordSoundViewController: UIViewController ,AVAudioRecorderDelegate{
         }
     }
     
-    //MARK: Setting The Layout
-    func buttonActivity(checkActivity : Bool){
-        if checkActivity{
-            recordB_Outlet.isEnabled=false
-            stopB_Outlet.isEnabled = true
-            recordLabel.text="Recording in Progress"
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if flag{
+            performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
         }
         else{
-            recordB_Outlet.isEnabled=true;
-            stopB_Outlet.isEnabled=false
-            recordLabel.text="Tap To Record"
+            print("Recording was Not Successful")
         }
     }
     
 }
-
