@@ -15,7 +15,7 @@ class RecordSoundViewController: UIViewController{
     @IBOutlet weak var recordLabel: UILabel!
     @IBOutlet weak var recordB_Outlet: UIButton!
     @IBOutlet weak var stopB_Outlet: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         stopB_Outlet.isEnabled = false
@@ -57,7 +57,6 @@ class RecordSoundViewController: UIViewController{
 }
 
 extension RecordSoundViewController : AVAudioRecorderDelegate{
-    
     //MARK: Setting ViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier=="stopRecording"{
@@ -75,5 +74,4 @@ extension RecordSoundViewController : AVAudioRecorderDelegate{
             print("Recording was Not Successful")
         }
     }
-    
 }

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Record Sound View Controller-->
+        <!--Record Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RecordSoundViewController" customModule="Pitch_Perfect_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Yml-o2-0Im" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Gb-bd-YTr"/>
                             <constraint firstItem="fNI-xf-VGw" firstAttribute="top" secondItem="m23-BG-lXP" secondAttribute="bottom" constant="8" id="Drr-t8-hgJ"/>
@@ -58,7 +58,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="8oD-AA-y6P"/>
+                    <navigationItem key="navigationItem" title="Record Screen" id="8oD-AA-y6P"/>
                     <connections>
                         <outlet property="recordB_Outlet" destination="Yml-o2-0Im" id="57N-w6-rRd"/>
                         <outlet property="recordLabel" destination="m23-BG-lXP" id="SAb-Aw-sSd"/>
@@ -152,7 +152,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="h6v-Pl-9DD" firstAttribute="top" secondItem="swz-2y-Wrh" secondAttribute="top" id="EZb-lg-Jgy"/>
                             <constraint firstItem="yPD-Aq-F59" firstAttribute="centerX" secondItem="h6v-Pl-9DD" secondAttribute="centerX" id="IOz-Zn-6bt"/>
